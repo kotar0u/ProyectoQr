@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Recupeción de contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div id="container-formulario">
+    <ion-list>
+      <ion-list>
+        <div class="container-formulario">
+          <div class="row">
+            <ion-item>
+              <ion-input
+                fill="solid"  
+                label="Usuario"
+                helperText="Ingrese su usuario Duoc"
+                errorText="Usuario invalido"
+                ngModel
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          
+          <ion-item>         
+            <div id="container-button">
+              <ion-button expand="block" [routerLink]="['/login']"><p>Restablecer contraseña</p></ion-button>
+            </div>  
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-list>
+  </div>
+
+
+</ion-content>

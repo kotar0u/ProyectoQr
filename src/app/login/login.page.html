@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Inicio de sesiòn alumno </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<div id="container-formulario">
+  <ion-list>
+    <ion-list>
+
+      <div class="container-formulario">
+
+        <div class="row">
+          <ion-item>
+            <ion-input fill="solid" label="Usuario" helperText="Ingrese su usuario Duoc" errorText="Usuario invalido"
+            [(ngModel)]="user.usuario"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="row">
+          <ion-item>
+            <ion-input type="password" fill="solid" label="Contraseña" helperText="Ingrese su contraseña"
+              errorText="Usuario invalido" [(ngModel)]="user.contrasena"><ion-input-password-toggle
+                slot="end"></ion-input-password-toggle></ion-input>
+          </ion-item>
+        </div>
+
+
+        <ion-item>
+          <ion-label>{{mensaje}}</ion-label>
+        </ion-item>
+        
+        <div class="container-alo">
+          <ion-title [routerLink]="['/rec-contra']">
+            <p>Restablecer contraseña</p>
+          </ion-title>
+        </div>
+
+        <ion-item>
+          <div id="container-button">
+            <ion-button expand="block" (click)="validar()">
+              <p>Iniciar sesion</p>
+            </ion-button>
+          </div>
+        </ion-item>
+
+        <div class="container-alo">
+          <ion-title [routerLink]="['/register']">
+            <p>¿No tienes usuario? Registrate</p>
+          </ion-title>
+        </div>
+      </div>
+    </ion-list>
+  </ion-list>
+</div>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="container-footer">
+      <ion-title>
+        <p>Duoc Asistencias</p>
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-footer>

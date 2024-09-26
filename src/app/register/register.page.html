@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container-formulario">
+    <div class="row">
+      <ion-item>
+        <ion-input
+          fill="solid"  
+          label="Nombre"
+          helperText="Ingrese su Nombre de usuario"
+          errorText="Nombre invalido"
+          ngModel
+        ></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+      <ion-item>
+        <ion-input
+          fill="solid"  
+          label="Apellido"
+          helperText="Ingrese su Apellido"
+          errorText="Apellido invalido"
+          ngModel
+        ></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+      <ion-item>
+        <ion-input
+          fill="solid"  
+          label="Rut"
+          helperText="Ingrese su Rut de usuario"
+          errorText="Rut invalido"
+          ngModel
+        ></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-label><p>Fecha de nacimiento</p></ion-label>
+    </ion-item>  
+    <div class="container-fec">
+      <ion-item>
+        <ion-datetime locale="en-GB" hourCycle="h12"></ion-datetime>
+      </ion-item>
+    </div>
+
+    <ion-item>         
+      <div id="container-button">
+        <ion-button expand="block"[routerLink]="['/home']"><p>Registrarse</p></ion-button>
+      </div>  
+    </ion-item>
+    
+  </div>
+</ion-content>
