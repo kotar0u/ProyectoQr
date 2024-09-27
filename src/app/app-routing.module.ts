@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -8,37 +9,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'register',
-    redirectTo: 'register',
-    pathMatch: 'full'
-  },
-  {
-    path: 'rec-contra',
-    redirectTo: 'rec-contra',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: 'e404',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'rec-contra',
@@ -49,7 +26,7 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'e404',
+    path: '**',
     loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
   },
 ];
